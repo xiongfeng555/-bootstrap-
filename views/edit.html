@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>学生添加界面</h1>
+        </header>
+
+        <form action="/editFinish" method="post">
+            <input type="hidden" name="id" value="{{student._id}}">
+            <div class="form-group">
+                <label for="stu_name">学生姓名</label>
+                <input type="text" id="stu_name" name="name" class="form-control" placeholder="请输入添加的学生姓名" required maxlength="8" minlength="2" value="{{student.name}}">
+            </div>
+            <div class="form-group">
+                <label for="stu_age">学生年龄</label>
+                <input type="number" required maxlength="3" id="stu_age" class="form-control" name="age" value="{{student.age}}">
+            </div>
+            <div class="form-group">
+                <label>学生性别</label>
+                <div>
+                    <input type="radio" name="gender" value="0" id="stu_gender" checked>
+                    <label for="stu_gender_b">男</label>
+                </div>
+                <div>
+                    <input type="radio" name="gender" value="1" id="stu_gender">
+                    <label for="stu_gender_g">女</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hobby">学生喜好</label>
+                <textarea name="hobby" class="form-control" id="hobby" cols="30" rows="10" requiured minlength="5" maxlength="20">{{student.hobby}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-success">保存</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
